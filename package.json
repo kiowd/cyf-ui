@@ -12,10 +12,14 @@
     "node": "14.13"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^23.1.0",
+    "@ckeditor/ckeditor5-react": "^3.0.0",
+    "draft-js": "^0.11.7",
     "jest": "^26.6.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-draft-wysiwyg": "^1.14.5",
     "styled-components": "^4.3.2"
   },
   "scripts": {

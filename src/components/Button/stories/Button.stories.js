@@ -9,7 +9,11 @@ export default {
 };
 
 export const Default = () => (
-  <Button label="Button" onClick={action("click")} variant="btnPrimaryOutlined">
+  <Button
+    label="Button"
+    onClick={action("click")}
+    variant="btnSecondaryGrayShadow"
+  >
     Click Me
   </Button>
 );
