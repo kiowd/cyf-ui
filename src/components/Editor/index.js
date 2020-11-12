@@ -1,11 +1,7 @@
 import React from "react";
-// import CKEditor from '@ckeditor/ckeditor5-react'
-// import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import styled from "styled-components";
-
-// import { config } from './editorConfig'
 
 const StyledSection = styled.section`
   width: 38%;
@@ -17,12 +13,10 @@ const StyledSection = styled.section`
 `;
 
 const TextEditor = () => {
-  // ClassicEditor.defaultConfig = config;
-
   return (
     <>
-      <h3>Testing DraftEditor</h3>
-      <p>Really How to solve it?!</p>
+      <h3>React Draft Wysiwyg :)</h3>
+
       <StyledSection>
         <Editor
           wrapperClassName="wrapper-class"
@@ -37,11 +31,9 @@ const TextEditor = () => {
               "fontFamily",
               "link",
               "list",
-            ], // This is where you can specify what options you need in
-            // the toolbar and appears in the same order as specified
+            ],
             inline: {
-              options: ["bold", "italic", "underline"], // this can be specified as well, toolbar wont have
-              // strikethrough, 'monospace', 'superscript', 'subscript'
+              options: ["bold", "italic", "underline"],
             },
             link: {
               options: ["link"],
