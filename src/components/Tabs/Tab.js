@@ -2,10 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Tab = ({ clickTabItem, activeTab, label }) => {
-  //   const handleOnClick = () => {
-  //     onClick(label);
-  //   };
-
   let className = "tab-list-item";
 
   if (activeTab === label) {
