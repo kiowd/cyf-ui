@@ -1,7 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { library } from "@fortawesome/fontawesome-svg-core";
-// import { faSmile, faMeh, faFrown } from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faSmile, faMeh, faFrown } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faSmile, faMeh, faFrown);
+
 import Emoji from "..";
 
 const EmojiStyle = {
@@ -19,13 +22,13 @@ export default {
 
 //
 export const SmileEmoji = () => {
-  return <FontAwesomeIcon icon={["fa", "smile"]} style={EmojiStyle} />;
+  return <FontAwesomeIcon icon={faSmile} style={EmojiStyle} />;
 };
 
 export const MehEmoji = () => {
-  return <FontAwesomeIcon icon={["fa", "meh"]} style={EmojiStyle} />;
+  return <FontAwesomeIcon icon={faMeh} style={EmojiStyle} />;
 };
 
 export const FrownEmoji = () => {
-  return <FontAwesomeIcon icon={["fa", "frown"]} style={EmojiStyle} />;
+  return <FontAwesomeIcon icon={faFrown} style={EmojiStyle} />;
 };
