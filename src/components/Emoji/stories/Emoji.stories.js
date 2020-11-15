@@ -1,24 +1,16 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSmile, faMeh, faFrown } from "@fortawesome/free-solid-svg-icons";
-import styled from "styled-components";
+// import { library } from "@fortawesome/fontawesome-svg-core";
+// import { faSmile, faMeh, faFrown } from "@fortawesome/free-solid-svg-icons";
 import Emoji from "..";
 
-library.add(faSmile, faMeh, faFrown);
-
-// const = styled.div`
-//   .ferhat {
-//     color: "yellow";
-//     height: 200px;
-//   }
-// `;
-
-const StyledIcon = styled(FontAwesomeIcon)`
-  .icons {
-    color: "yellow";
-  }
-`;
+const EmojiStyle = {
+  color: "white",
+  fontSize: "40px",
+  backgroundColor: "gray",
+  borderRadius: "100px",
+  border: "3px solid gray",
+};
 
 export default {
   title: "Components/Emoji",
@@ -27,13 +19,13 @@ export default {
 
 //
 export const SmileEmoji = () => {
-  return <StyledIcon icon="smile" style={{ color: "red" }} />;
+  return <FontAwesomeIcon icon={["fa", "smile"]} style={EmojiStyle} />;
 };
 
 export const MehEmoji = () => {
-  return <StyledIcon icon="meh" className="icons" />;
+  return <FontAwesomeIcon icon={["fa", "meh"]} style={EmojiStyle} />;
 };
 
 export const FrownEmoji = () => {
-  return <StyledIcon icon="frown" />;
+  return <FontAwesomeIcon icon={["fa", "frown"]} style={EmojiStyle} />;
 };
