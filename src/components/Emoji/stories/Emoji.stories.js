@@ -1,34 +1,16 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSmile, faMeh, faFrown } from "@fortawesome/free-solid-svg-icons";
-
-library.add(faSmile, faMeh, faFrown);
-
-import Emoji from "..";
-
-const EmojiStyle = {
-  color: "white",
-  fontSize: "40px",
-  backgroundColor: "gray",
-  borderRadius: "100px",
-  border: "3px solid gray",
-};
+import { BaseEmoji, SmileEmoji, MehEmoji, FrownEmoji } from "../index";
 
 export default {
   title: "Components/Emoji",
-  component: Emoji,
+  component: BaseEmoji,
 };
 
-//
-export const SmileEmoji = () => {
-  return <FontAwesomeIcon icon={faSmile} style={EmojiStyle} />;
-};
+export const SmileEmojiStory = () => <SmileEmoji />;
+SmileEmojiStory.storyName = "Smile Emoji";
 
-export const MehEmoji = () => {
-  return <FontAwesomeIcon icon={faMeh} style={EmojiStyle} />;
-};
+export const MehEmojiStory = () => <MehEmoji />;
+MehEmojiStory.storyName = "Meh Emoji";
 
-export const FrownEmoji = () => {
-  return <FontAwesomeIcon icon={faFrown} style={EmojiStyle} />;
-};
+export const FrownEmojiStory = () => <FrownEmoji />;
+FrownEmojiStory.storyName = "Frown Emoji";
