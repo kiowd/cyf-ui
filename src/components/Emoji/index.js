@@ -7,9 +7,9 @@ import styled from "styled-components";
 library.add(faSmile, faMeh, faFrown);
 
 export const BaseEmoji = styled(FontAwesomeIcon)`
-  color: yellow;
-  font-size: 24px;
-  back
+  color: white;
+  font-size: 34px;
+  background-color: gray;
   border-radius: 100px;
   border: 3px solid gray;
 `;
