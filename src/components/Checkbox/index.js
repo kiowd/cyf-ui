@@ -3,7 +3,7 @@ import React from "react";
 function Smiley() {
   return (
     <div>
-      <h1>test</h1>
+      <input type="checkbox" />
     </div>
   );
 }
