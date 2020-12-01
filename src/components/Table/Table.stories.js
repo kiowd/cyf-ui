@@ -1,9 +1,9 @@
 import React from "react";
-import { ApplicantsTable, TableRow, RowData } from "./index";
+import { Table, TableRow, RowData } from "./index";
 
 export default {
   title: "Components/Table",
-  component: ApplicantsTable,
+  component: Table,
 };
 
 const applicants = [
@@ -29,7 +29,7 @@ const applicants = [
 
 export const ProggressTable = () => {
   return (
-    <ApplicantsTable>
+    <Table>
       {applicants.map((applicant) => (
         <TableRow key={applicant.id}>
           <RowData>{applicant.id}</RowData>
@@ -41,6 +41,6 @@ export const ProggressTable = () => {
           <RowData>{applicant.date}</RowData>
         </TableRow>
       ))}
-    </ApplicantsTable>
+    </Table>
   );
 };

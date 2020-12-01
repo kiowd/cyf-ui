@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ApplicantsTable = styled.table`
+export const Table = styled.table`
   border: none;
   position: relative;
   width: 90%;
