@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, TableRow, RowData } from "./index";
+import { Table, TableHead, TableRow, RowData } from "./index";
 
 export default {
   title: "Components/Table",
@@ -30,6 +30,15 @@ const applicants = [
 export const ProggressTable = () => {
   return (
     <Table>
+      <TableRow>
+        <TableHead>No</TableHead>
+        <TableHead>check</TableHead>
+        <TableHead>call</TableHead>
+        <TableHead>emoji</TableHead>
+        <TableHead>name</TableHead>
+        <TableHead>progress</TableHead>
+        <TableHead>date</TableHead>
+      </TableRow>
       {applicants.map((applicant) => (
         <TableRow key={applicant.id}>
           <RowData>{applicant.id}</RowData>
