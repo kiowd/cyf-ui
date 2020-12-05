@@ -77,7 +77,7 @@ export const StyledOutlinedButton = styled.button`
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
-  border: 1px solid #007bff;
+  border: 1px solid ${(props) => (props.color ? props.color : `#007bff`)};
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
