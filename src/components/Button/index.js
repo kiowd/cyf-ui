@@ -95,13 +95,13 @@ export const PrimaryButton = ({ label, background, color }) => (
 
 export const SecondaryButton = ({ label, background, color }) => (
   <StyledSecondaryButton background={background} color={color}>
-    {label}{" "}
+    {label}
   </StyledSecondaryButton>
 );
 
 export const DangerButton = ({ label, background, color }) => (
   <StyledDangerButton background={background} color={color}>
-    {label}{" "}
+    {label}
   </StyledDangerButton>
 );
 
