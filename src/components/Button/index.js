@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
 export const Button = styled.button`
   font-style: normal;
@@ -87,50 +86,26 @@ export const StyledOutlinedButton = styled.button`
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 `;
 
-export const PrimaryButton = ({ label, background, color }) => (
-  <StyledPrimaryButton background={background} color={color}>
-    {label}
+export const PrimaryButton = ({ ...args }) => (
+  <StyledPrimaryButton background={args.background} color={args.color}>
+    {args.label}
   </StyledPrimaryButton>
 );
 
-export const SecondaryButton = ({ label, background, color }) => (
-  <StyledSecondaryButton background={background} color={color}>
-    {label}
+export const SecondaryButton = ({ ...args }) => (
+  <StyledSecondaryButton background={args.background} color={args.color}>
+    {args.label}
   </StyledSecondaryButton>
 );
 
-export const DangerButton = ({ label, background, color }) => (
-  <StyledDangerButton background={background} color={color}>
-    {label}
+export const DangerButton = ({ ...args }) => (
+  <StyledDangerButton background={args.background} color={args.color}>
+    {args.label}
   </StyledDangerButton>
 );
 
-export const OutlinedButton = ({ label, background, color }) => (
-  <StyledOutlinedButton background={background} color={color}>
-    {label}
+export const OutlinedButton = ({ ...args }) => (
+  <StyledOutlinedButton background={args.background} color={args.color}>
+    {args.label}
   </StyledOutlinedButton>
 );
-
-PrimaryButton.propTypes = {
-  label: PropTypes.string.isRequired,
-  background: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
-};
-
-SecondaryButton.propTypes = {
-  label: PropTypes.string.isRequired,
-  background: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
-};
-
-DangerButton.propTypes = {
-  label: PropTypes.string.isRequired,
-  background: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
-};
-
-OutlinedButton.propTypes = {
-  label: PropTypes.string.isRequired,
-  background: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
-};

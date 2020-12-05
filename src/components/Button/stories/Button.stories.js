@@ -7,8 +7,6 @@ import {
   OutlinedButton,
 } from "..";
 
-// eslint-disable-next-line react/jsx-props-no-spreading
-
 export default {
   title: "Components/Button",
   component: Button,
@@ -20,13 +18,7 @@ export default {
 };
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-export const PrimaryButtonStory = (args) => (
-  <PrimaryButton
-    label={args.label}
-    background={args.backgroundColor}
-    color={args.color}
-  />
-);
+export const PrimaryButtonStory = (args) => <PrimaryButton {...args} />;
 PrimaryButtonStory.storyName = "Primary";
 PrimaryButtonStory.args = {
   label: "Primary",
@@ -34,13 +26,8 @@ PrimaryButtonStory.args = {
   color: "#ffffff",
 };
 
-export const SecondaryButtonStory = (args) => (
-  <SecondaryButton
-    label={args.label}
-    background={args.backgroundColor}
-    color={args.color}
-  />
-);
+// eslint-disable-next-line react/jsx-props-no-spreading
+export const SecondaryButtonStory = (args) => <SecondaryButton {...args} />;
 SecondaryButtonStory.storyName = "Secondary";
 SecondaryButtonStory.args = {
   label: "Secondary",
@@ -48,13 +35,8 @@ SecondaryButtonStory.args = {
   color: "#ffffff",
 };
 
-export const DangerButtonStory = (args) => (
-  <DangerButton
-    label={args.label}
-    background={args.backgroundColor}
-    color={args.color}
-  />
-);
+// eslint-disable-next-line react/jsx-props-no-spreading
+export const DangerButtonStory = (args) => <DangerButton {...args} />;
 DangerButtonStory.storyName = "Danger";
 DangerButtonStory.args = {
   label: "Danger",
@@ -63,13 +45,7 @@ DangerButtonStory.args = {
 };
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-export const OutlineButtonStory = (args) => (
-  <OutlinedButton
-    label={args.label}
-    background={args.backgroundColor}
-    color={args.color}
-  />
-);
+export const OutlineButtonStory = (args) => <OutlinedButton {...args} />;
 OutlineButtonStory.storyName = "Outline";
 OutlineButtonStory.args = {
   label: "Outline",
