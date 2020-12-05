@@ -9,6 +9,7 @@ export const StyledPrimaryButton = styled.button`
   width: 135.88px;
   left: 2354px;
   top: 1432px;
+  height: 42px;
   color: ${(props) => (props.color ? props.color : `#ffffff`)};
   background-color: ${(props) =>
     props.background ? props.background : `#00a3ff`};
@@ -30,6 +31,7 @@ export const StyledSecondaryButton = styled.button`
   width: 135.88px;
   left: 2354px;
   top: 1432px;
+  height: 42px;
   color: ${(props) => (props.color ? props.color : `#ffffff`)};
   background-color: ${(props) =>
     props.background ? props.background : `#28a745`};
@@ -51,6 +53,7 @@ export const StyledDangerButton = styled.button`
   width: 135.88px;
   left: 2354px;
   top: 1432px;
+  height: 42px;
   color: ${(props) => (props.color ? props.color : `#ffffff`)};
   background-color: ${(props) =>
     props.background ? props.background : `#dc3545`};
@@ -70,6 +73,7 @@ export const StyledOutlinedButton = styled.button`
   width: 135.88px;
   left: 2354px;
   top: 1432px;
+  height: 42px;
   color: ${(props) => (props.color ? props.color : `#007bff`)};
   background-color: ${(props) =>
     props.background ? props.background : `#ffffff`};
