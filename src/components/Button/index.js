@@ -87,25 +87,25 @@ export const StyledOutlinedButton = styled.button`
 `;
 
 export const PrimaryButton = ({ ...args }) => (
-  <StyledPrimaryButton background={args.background} color={args.color}>
+  <StyledPrimaryButton background={args.backgroundColor} color={args.color}>
     {args.label}
   </StyledPrimaryButton>
 );
 
 export const SecondaryButton = ({ ...args }) => (
-  <StyledSecondaryButton background={args.background} color={args.color}>
+  <StyledSecondaryButton background={args.backgroundColor} color={args.color}>
     {args.label}
   </StyledSecondaryButton>
 );
 
 export const DangerButton = ({ ...args }) => (
-  <StyledDangerButton background={args.background} color={args.color}>
+  <StyledDangerButton background={args.backgroundColor} color={args.color}>
     {args.label}
   </StyledDangerButton>
 );
 
 export const OutlinedButton = ({ ...args }) => (
-  <StyledOutlinedButton background={args.background} color={args.color}>
+  <StyledOutlinedButton background={args.backgroundColor} color={args.color}>
     {args.label}
   </StyledOutlinedButton>
 );
