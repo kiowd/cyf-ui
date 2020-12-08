@@ -8,6 +8,7 @@
     "type": "git",
     "url": "https://github.com/CodeYourFuture/cyf-ui.git"
   },
+  "license": "GNU General Public License (GPL)",
   "engines": {
     "node": "14.13"
   },
@@ -19,7 +20,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.4.1"
   },
   "scripts": {
     "babel:build": "babel src/components --out-dir dist --source-maps inline --copy-files",
@@ -60,8 +61,9 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.14.3",
-    "husky": ">=1",
+    "husky": "^4.3.0",
     "lint-staged": ">=8",
+    "pre-commit": "^1.2.2",
     "prettier": "^2.1.2",
     "react-is": "^17.0.1"
   },
