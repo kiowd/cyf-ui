@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Checkbox from "..";
 
@@ -8,5 +8,12 @@ export default {
 };
 
 export const Default = () => {
-  return <Checkbox />;
+  const [checkValue, setCheckValue] = useState(false);
+  return (
+    <Checkbox
+      label="include VAT"
+      checked={checkValue}
+      onChange={(value) => setCheckValue(value)}
+    />
+  );
 };
