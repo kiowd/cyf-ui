@@ -15,6 +15,7 @@ function Check({ label, checked, onChange }) {
   );
 }
 const StyledCheckbox = styled.div`
+  color: "yellow";
   background: "blue";
   font-size: 18px;
 `;
