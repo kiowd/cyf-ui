@@ -8,7 +8,7 @@ function Check({ label, checked, onChange }) {
       <input
         type="checkbox"
         checked={checked}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={(e) => onChange(e.target.checked)}
       />
       {label}
     </StyledCheckbox>
