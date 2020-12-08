@@ -13,7 +13,7 @@ export const Default = () => {
     <Checkbox
       label="include VAT"
       checked={checkValue}
-      onChange={(value) => setCheckValue(value)}
+      onChange={(checkValue) => setCheckValue(!checkValue)}
     />
   );
 };
