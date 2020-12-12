@@ -1,5 +1,11 @@
 import React from "react";
-import { Table, TableHead, TableRow, RowData } from "./index";
+import {
+  Table,
+  TableHead,
+  TableRow,
+  TableRowWithDetails,
+  TableColumn,
+} from "./index";
 
 export default {
   title: "Components/Table",
@@ -27,29 +33,78 @@ const applicants = [
   },
 ];
 
-export const ProggressTable = () => {
+export const DefaultTable = () => {
   return (
     <Table>
-      <TableRow>
-        <TableHead>No</TableHead>
-        <TableHead>check</TableHead>
-        <TableHead>call</TableHead>
-        <TableHead>emoji</TableHead>
-        <TableHead>name</TableHead>
-        <TableHead>progress</TableHead>
-        <TableHead>date</TableHead>
-      </TableRow>
-      {applicants.map((applicant) => (
-        <TableRow key={applicant.id}>
-          <RowData>{applicant.id}</RowData>
-          <RowData>{applicant.check}</RowData>
-          <RowData>{applicant.call}</RowData>
-          <RowData>{applicant.emoji}</RowData>
-          <RowData>{applicant.name}</RowData>
-          <RowData>{applicant.progress}</RowData>
-          <RowData>{applicant.date}</RowData>
+      <thead>
+        <TableRow>
+          <TableHead>No</TableHead>
+          <TableHead>check</TableHead>
+          <TableHead>call</TableHead>
+          <TableHead>emoji</TableHead>
+          <TableHead>name</TableHead>
+          <TableHead>progress</TableHead>
+          <TableHead>date</TableHead>
         </TableRow>
-      ))}
+      </thead>
+      <tbody>
+        {applicants.map((applicant) => (
+          <TableRow key={applicant.id}>
+            <TableColumn>{applicant.id}</TableColumn>
+            <TableColumn>{applicant.check}</TableColumn>
+            <TableColumn>{applicant.call}</TableColumn>
+            <TableColumn>{applicant.emoji}</TableColumn>
+            <TableColumn>{applicant.name}</TableColumn>
+            <TableColumn>{applicant.progress}</TableColumn>
+            <TableColumn>{applicant.date}</TableColumn>
+          </TableRow>
+        ))}
+      </tbody>
+    </Table>
+  );
+};
+
+const ItemDetails = () => {
+  return (
+    <ul>
+      <li>City</li>
+      <li>Age</li>
+      <li>Number</li>
+      <li>Email</li>
+      <li>Started</li>
+      <li>Refugee</li>
+    </ul>
+  );
+};
+
+export const TableWithItemDetailsRows = () => {
+  return (
+    <Table width="100%">
+      <thead>
+        <TableRow>
+          <TableHead>No</TableHead>
+          <TableHead>check</TableHead>
+          <TableHead>call</TableHead>
+          <TableHead>emoji</TableHead>
+          <TableHead>name</TableHead>
+          <TableHead>progress</TableHead>
+          <TableHead>date</TableHead>
+        </TableRow>
+      </thead>
+
+      <tbody>
+        {applicants.map((applicant) => (
+          <TableRowWithDetails key={applicant.id} itemDetails={<ItemDetails />}>
+            <TableColumn>{applicant.id}</TableColumn>
+            <TableColumn>{applicant.check}</TableColumn>
+            <TableColumn>{applicant.call}</TableColumn>
+            <TableColumn>{applicant.emoji}</TableColumn>
+            <TableColumn>{applicant.name}</TableColumn>
+            <TableColumn>{applicant.progress}</TableColumn>
+            <TableColumn>{applicant.date}</TableColumn>
+          </TableRowWithDetails>
+        ))}
+      </tbody>
     </Table>
   );
 };

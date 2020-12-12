@@ -7,7 +7,7 @@ const StyledCheckbox = styled.div`
   background: "blue";
   font-size: 18px;
 `;
-function Check({ label, checked, onChange }) {
+export const Checkbox = ({ label, checked, onChange }) => {
   return (
     <StyledCheckbox>
       <input
@@ -18,12 +18,10 @@ function Check({ label, checked, onChange }) {
       {label}
     </StyledCheckbox>
   );
-}
+};
 
-Check.propTypes = {
+Checkbox.propTypes = {
   checked: PropTypes.any.isRequired,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
-
-export default Check;
