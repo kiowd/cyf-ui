@@ -1,21 +1,32 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PropTypes from "prop-types";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSmile, faMeh, faFrown } from "@fortawesome/free-solid-svg-icons";
-import styled from "styled-components";
+import {
+  faSmile,
+  faPhone,
+  faMeh,
+  faFrown,
+} from "@fortawesome/free-solid-svg-icons";
+import { BaseEmoji, BaseSmileyEmoji } from "./BaseEmoji";
 
 library.add(faSmile, faMeh, faFrown);
 
-export const BaseEmoji = styled(FontAwesomeIcon)`
-  color: white;
-  font-size: 34px;
-  background-color: gray;
-  border-radius: 100px;
-  border: 3px solid gray;
-`;
+const baseEmojiPropTypes = {
+  color: PropTypes.string,
+};
 
-export const SmileEmoji = () => <BaseEmoji icon={faSmile} />;
+const baseEmojiDefaultPropTypes = {
+  color: "#1B365D",
+};
 
-export const MehEmoji = () => <BaseEmoji icon={faMeh} />;
+export const CallEmoji = ({ color }) => (
+  <BaseEmoji icon={faPhone} color={color} />
+);
+CallEmoji.propTypes = baseEmojiPropTypes;
+CallEmoji.defaultProps = baseEmojiDefaultPropTypes;
 
-export const FrownEmoji = () => <BaseEmoji icon={faFrown} />;
+export const SmileEmoji = () => <BaseSmileyEmoji icon={faSmile} />;
+
+export const MehEmoji = () => <BaseSmileyEmoji icon={faMeh} />;
+
+export const FrownEmoji = () => <BaseSmileyEmoji icon={faFrown} />;
