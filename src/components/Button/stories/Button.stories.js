@@ -6,14 +6,33 @@ export default {
   component: Button,
 };
 
-export const Primary = () => <Button variant="primary">Primary</Button>;
+// eslint-disable-next-line no-console
+const onClick = () => console.log("click me");
+
+export const Primary = () => (
+  <Button variant="primary" onClick={onClick}>
+    Primary
+  </Button>
+);
 Primary.storyName = "Primary";
 
-export const Secondary = () => <Button variant="secondary">Secondary</Button>;
+export const Secondary = () => (
+  <Button variant="secondary" onClick={onClick}>
+    Secondary
+  </Button>
+);
 Secondary.storyName = "Secondary";
 
-export const Danger = () => <Button variant="danger">Danger</Button>;
+export const Danger = () => (
+  <Button variant="danger" onClick={onClick}>
+    Danger
+  </Button>
+);
 Danger.storyName = "Danger";
 
-export const Outline = () => <Button variant="outline">Outline</Button>;
+export const Outline = () => (
+  <Button variant="outline" onClick={onClick}>
+    Outline
+  </Button>
+);
 Outline.storyName = "Outline";
