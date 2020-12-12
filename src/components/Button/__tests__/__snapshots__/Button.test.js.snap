@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button matches snapshots 1`] = `
+exports[`Button matches snapshots for primary 1`] = `
 <button
-  class="sc-bdVaJa jWwBJW"
+  class="sc-bdVaJa euJmou"
 >
   Click Me
 </button>
