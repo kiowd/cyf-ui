@@ -1,49 +1,55 @@
+import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 export const Table = styled.table`
-  border: 1px solid black;
-  border-collapse: collapse;
   position: relative;
-  width: 90%;
   background: #ffffff;
+  width: ${({ width }) => width || "auto"};
+  border-collapse: collapse;
+`;
+
+export const TableHead = styled.th`
+  border-collapse: collapse;
+  padding: 5px;
+  max-width: 100%;
+  white-space: nowrap;
+  height: 30px;
+  text-align: left;
+`;
+
+export const TableColumn = styled.td`
+  border-collapse: collapse;
+  padding-left: 5px;
 `;
 
 export const TableRow = styled.tr`
-  height: 22px;
-  top: 58px;
-  background: #ffffff;
   cursor: pointer;
+  height: 40px;
+
   &:hover {
     background-color: #f3f3f3;
   }
 `;
 
-export const TableHead = styled.th`
-  border: 1px solid black;
-  border-collapse: collapse;
-  padding-left: 5px
-  max-width: 100%;
-  white-space: nowrap;
-  height: 20px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 18px;
-  letter-spacing: 0.01em;
-  color: #000000;
-`;
+export const TableRowWithDetails = ({ itemDetails, children }) => {
+  const [viewDetail, setViewDetail] = React.useState(false);
+  const toggle = () => setViewDetail(!viewDetail);
 
-export const RowData = styled.td`
-  border: 1px solid black;
-  border-collapse: collapse;
-  padding-left: 5px
-  max-width: 100%;
-  white-space: nowrap;
-  height: 20px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 18px;
-  letter-spacing: 0.01em;
-  color: #000000;
-`;
+  return (
+    <>
+      <TableRow onClick={toggle}>{children}</TableRow>
+
+      {viewDetail ? (
+        <TableRow>
+          <div>{itemDetails}</div>
+        </TableRow>
+      ) : null}
+    </>
+  );
+};
+
+TableRowWithDetails.propTypes = {
+  children: PropTypes.any.isRequired,
+  itemDetails: PropTypes.any.isRequired,
+};
