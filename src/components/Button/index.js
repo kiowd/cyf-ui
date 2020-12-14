@@ -1,252 +1,69 @@
-/* eslint-disable camelcase */
+import styled, { css } from "styled-components";
 
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-// Here starts our specific button styles:
+export const Button = styled.button`
+  ${({ variant }) => css`
+    box-sizing: border-box;
+    border-radius: 2px;
+    border: none;
+    padding: 0.575rem 0.85rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    cursor: pointer;
+    color: #ffffff;
+    background: #3455db;
 
-/* primary buttons styling */
-const btnPrimary = {
-  name: "btnPrimary",
-  color: "#ffffff",
-  background: "#2196f3",
-};
+    &:active {
+      transform: translateY(1px);
+    }
+    &:active,
+    &:hover {
+      background: #ffffff;
+      color: #3455db;
+      border: 2px solid #3455db;
+    }
 
-const btnPrimaryOutlined = {
-  name: "btnPrimaryOutlined",
-  color: "#2196f3",
-  background: "#ffffff",
-  border: "2px solid #03a9f4",
-};
+    transition: background 0.5s ease-in-out;
+    transition: color 0.1s ease-in-out;
 
-const btnPrimaryLight = {
-  name: "btnPrimaryLight",
-  color: "#2196f3",
-  background: "#b3e5fc",
-};
+    ${variant === "secondary" &&
+    css`
+      background: #28a228;
 
-const btnPrimaryGrayShadow = {
-  name: "btnPrimaryGrayShadow",
-  color: "#2196f3",
-  background: "#ffffff",
-  boxShadow:
-    "0px 1px 10px rgba(0, 0, 0, 0.2), 0px 4px 5px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14)",
-};
-const btnPrimaryShadow = {
-  name: "btnPrimaryShadow",
-  color: "#2196f3",
-  background: "#ffffff",
-  boxShadow: "0px 2px 4px #03A9F4",
-};
+      &:active,
+      &:hover {
+        background: #ffffff;
+        color: #28a228;
+        border: 2px solid #28a228;
+      }
+    `}
 
-/* secondary buttons styling */
-const btnSecondary = {
-  name: "btnSecondary",
-  color: "#ffffff",
-  background: "#4CAF50",
-};
-const btnSecondaryOutline = {
-  name: "btnSecondaryOutline",
-  color: "#4CAF50",
-  background: "#ffffff",
-  border: "2px solid #4CAF50",
-};
-const btnSecondaryLight = {
-  name: "btnSecondaryLight",
-  color: "#388E3C",
-  background: "#81C784",
-  opacity: "0.8",
-};
-const btnSecondaryGrayShadow = {
-  name: "btnSecondaryGrayShadow",
-  color: "#388E3C",
-  background: "#ffffff",
-  boxShadow:
-    "0px 1px 10px rgba(0, 0, 0, 0.2), 0px 4px 5px rgba(0, 0, 0, 0.12),0px 2px 4px rgba(0, 0, 0, 0.14)",
-};
-const btnSecondaryShadow = {
-  name: "btnSecondaryShadow",
-  color: "#388E3C",
-  background: "#ffffff",
-  boxShadow: "0px 2px 4px #4CAF50",
-};
+    ${variant === "danger" &&
+    css`
+      background: #d3273e;
+      &:active,
+      &:hover {
+        background: #ffffff;
+        color: #d3273e;
+        border: 2px solid #d3273e;
+      }
+    `}
 
-/* error buttons styling */
-const btnError = {
-  name: "btnError",
-  color: "#ffffff",
-  background: "#f44336",
-};
-const btnErrorOutline = {
-  name: "btnErrorOutline",
-  color: "#f44336",
-  background: "#ffffff",
-  border: "2px solid #f44336",
-};
-const btnErrorLight = {
-  name: "btnErrorLight",
-  color: "#f44336",
-  background: "#FFCDD2",
-  opacity: "0.8",
-};
-const btnErrorGrayShadow = {
-  name: "btnErrorGrayShadow",
-  color: "#f44336",
-  background: "#ffffff",
-  boxShadow:
-    "0px 1px 10px rgba(0, 0, 0, 0.2), 0px 4px 5px rgba(0, 0, 0, 0.12),0px 2px 4px rgba(0, 0, 0, 0.14)",
-};
-const btnErrorShadow = {
-  name: "btnErrorShadow",
-  color: "#f44336",
-  background: "#ffffff",
-  boxShadow: "0px 2px 4px #F44336",
-};
+    ${variant === "outline" &&
+    css`
+      color: #3455db;
+      border: 2px solid #3455db;
+      background: none;
 
-const btnDivider = {
-  name: "btnDivider",
-  color: "#ffffff",
-  background: "#BDBDBD",
-};
-const btnDividerOutline = {
-  name: "btnDividerOutline",
-  color: "#9E9E9E",
-  background: "#ffffff",
-  border: "2px solid #BDBDBD",
-};
-const btnDividerLight = {
-  name: "btnDividerLight",
-  color: "#757575",
-  background: "#EEEEEE",
-  opacity: 0.8,
-};
-const btnDividerGrayShadow = {
-  name: "btnDividerGrayShadow",
-  color: "#9E9E9E",
-  background: "#ffffff",
-  boxShadow:
-    "0px 1px 10px rgba(0, 0, 0, 0.2), 0px 4px 5px rgba(0, 0, 0, 0.12),0px 2px 4px rgba(0, 0, 0, 0.14)",
-};
-const btnCorner_5px = {
-  name: "btnCorner_5px",
-  color: "#ffffff",
-  background: "#2196f3",
-  borderRadius: "5px",
-};
-const btnCorner_200px = {
-  name: "btnCorner_200px",
-  color: "#ffffff",
-  background: "#2196f3",
-  borderRadius: "200px",
-};
-const btnChip = {
-  name: "btnChip",
-  color: "#ffffff",
-  background: "#2196f3",
-  padding: "5px 10px",
-  borderRadius: "200px",
-};
-const ellipse = {
-  fontSize: "40px",
-  padding: "16px 16px",
-  borderRadius: "50%",
-};
-const btnPrimaryEllipse = {
-  ...btnPrimary,
-  ...ellipse,
-  name: "btnPrimaryEllipse",
-};
-const btnPrimaryOutlineEllipse = {
-  ...btnPrimaryOutlined,
-  ...ellipse,
-  name: "btnPrimaryOutlineEllipse",
-};
-const btnPrimaryLightEllipse = {
-  ...btnPrimaryLight,
-  ...ellipse,
-  name: "btnPrimaryLightEllipse",
-};
-const btnPrimaryGrayShadowEllipse = {
-  ...btnPrimaryGrayShadow,
-  ...ellipse,
-  name: "btnPrimaryGrayShadowEllipse",
-};
-const btnPrimaryShadowEllipse = {
-  ...btnPrimaryShadow,
-  ...ellipse,
-  name: "btnPrimaryShadowEllipse",
-};
-const btnSecondaryVector = {
-  ...btnSecondary,
-  name: "btnSecondaryVector",
-};
-// Add all buttons different  objects here
-const buttonTypes = [
-  btnPrimary,
-  btnPrimaryOutlined,
-  btnPrimaryLight,
-  btnPrimaryGrayShadow,
-  btnPrimaryShadow,
-  btnSecondary,
-  btnSecondaryOutline,
-  btnSecondaryLight,
-  btnSecondaryGrayShadow,
-  btnSecondaryShadow,
-  btnError,
-  btnErrorOutline,
-  btnErrorLight,
-  btnErrorGrayShadow,
-  btnErrorShadow,
-  btnDivider,
-  btnDividerOutline,
-  btnDividerLight,
-  btnDividerGrayShadow,
-  btnCorner_5px,
-  btnCorner_200px,
-  btnChip,
-  btnPrimaryEllipse,
-  btnPrimaryOutlineEllipse,
-  btnPrimaryLightEllipse,
-  btnPrimaryGrayShadowEllipse,
-  btnPrimaryShadowEllipse,
-  btnSecondaryVector,
-];
-
-// Return the wanted button styles according the type props that send to the component
-const getSelectedButtonStyle = (variant) =>
-  buttonTypes.find((btn) => btn.name === variant);
-
-// The button styled component
-const StyledButton = styled.button`
-  font-style: normal;
-  font-weight: 600;
-  font-size: ${(props) => props.variant.fontSize || "14px"};
-  font-family: "Open Sans", sans-serif;
-  line-height: 14px;
-  color: ${(props) => props.variant.color};
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.75px;
-  text-transform: capitalize;
-  padding: ${(props) => props.variant.padding || "8px 32px"};
-  box-shadow: ${(props) => props.variant.boxShadow || "none"};
-  border: ${(props) => props.variant.border || "none"};
-  background: ${(props) => props.variant.background};
-  opacity: ${(props) => props.variant.opacity || "initial"};
-  border-radius: ${(props) => props.variant.borderRadius || "5px"};
+      &:active,
+      &:hover {
+        background: #3455db;
+        color: #ffffff;
+      }
+    `}
+  `}
 `;
-
-const Button = ({ variant, children, onClick }) => (
-  <StyledButton onClick={onClick} variant={getSelectedButtonStyle(variant)}>
-    {children}
-  </StyledButton>
-);
-
-Button.propTypes = {
-  children: PropTypes.any.isRequired,
-  variant: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-};
-
-export default Button;

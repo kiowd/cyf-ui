@@ -1,13 +1,13 @@
 import React from "react";
 import { fireEvent, render } from "@testing-library/react";
-import Button from "..";
+import { Button } from "..";
 
 describe("Button", () => {
-  test("matches snapshots", () => {
+  test("matches snapshots for primary", () => {
     const mockOnClick = jest.fn(() => null);
 
     const { container } = render(
-      <Button label="Button" onClick={mockOnClick} variant="btnPrimaryOutlined">
+      <Button onClick={mockOnClick} variant="primary">
         Click Me
       </Button>
     );
@@ -19,7 +19,7 @@ describe("Button", () => {
     const mockOnClick = jest.fn(() => null);
 
     const { getByText } = render(
-      <Button label="Button" onClick={mockOnClick} variant="btnPrimaryOutlined">
+      <Button label="Button" onClick={mockOnClick} variant="secondary">
         Click Me
       </Button>
     );
